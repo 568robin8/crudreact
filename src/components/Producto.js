@@ -1,10 +1,24 @@
-import React from 'react'
+import React , { Fragment ,useContext} from 'react'
+import { ProductosContext } from '../context/ProductosContext';
 
-function Producto() {
+
+function Producto({producto}) {
+    const { nombre, precio, id } = producto;
+    const { deleteProducts } = useContext(ProductosContext);
+
+        // Confirmar si desea eliminarlo
+        const confirmarEliminarProducto = id => {
+
+
+                  //  dispatch( borrarProductoAction(id) );
+                  deleteProducts(id);
+                    console.log(id)
+      
+        }
     return (
         <tr>
-            <td>p2</td>
-            <td><span className="font-weight-bold"> $ 44 </span></td>
+            <td>{nombre}</td>
+            <td><span className="font-weight-bold"> $ {precio} </span></td>
             <td className="acciones">
                 <button 
                     type="button"
@@ -15,6 +29,7 @@ function Producto() {
                 <button 
                     type="button"
                     className="btn btn-danger"
+                    onClick={() => confirmarEliminarProducto(id)}
                   
                 >Eliminar </button>
             </td>
