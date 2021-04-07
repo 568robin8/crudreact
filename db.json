@@ -6,14 +6,14 @@
       "id": 7
     },
     {
-      "nombre": "1",
-      "precio": 2,
-      "id": 10
+      "nombre": "vepues",
+      "precio": "51",
+      "id": 12
     },
     {
-      "nombre": "Rib Eye",
-      "precio": "500",
-      "id": 8
+      "nombre": "nuevo",
+      "precio": "44",
+      "id": 13
     }
   ]
 }

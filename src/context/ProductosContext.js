@@ -33,11 +33,18 @@ const ProductosProvider = (props) => {
         guardarProductos(productos.filter( producto => producto.id !== productoeliminar));
     }
 
+    const agregarProducto = async (producto) => {
+        const resultado =  await axios.post('http://localhost:4000/productos', producto);
+        guardarProductos([...productos,producto]);
+       // console.log(resultado)
+    }
+
     return (
         <ProductosContext.Provider
             value={{
                 productos,
-                deleteProducts
+                deleteProducts,
+                agregarProducto
             }}
         >
             {props.children}

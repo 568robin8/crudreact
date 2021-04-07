@@ -1,4 +1,4 @@
-import React , { Fragment ,useContext} from 'react'
+import React , { Fragment ,useContext } from 'react'
 import { ProductosContext } from '../context/ProductosContext';
 
 
@@ -18,20 +18,18 @@ function Producto({producto}) {
     return (
         <tr>
             <td>{nombre}</td>
-            <td><span className="font-weight-bold"> $ {precio} </span></td>
+            <td><span className="font-weight-bold">${precio}</span></td>
             <td className="acciones">
                 <button 
-                    type="button"
-               
+                    type="button"               
                     className="btn btn-primary mr-2">
                     Editar
                 </button>
                 <button 
                     type="button"
                     className="btn btn-danger"
-                    onClick={() => confirmarEliminarProducto(id)}
-                  
-                >Eliminar </button>
+                    onClick={() => confirmarEliminarProducto(id)}                  
+                >Eliminar</button>
             </td>
         </tr>
     )
