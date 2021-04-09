@@ -1,11 +1,13 @@
 import React , { Fragment ,useContext } from 'react'
 import { ProductosContext } from '../context/ProductosContext';
+import { useHistory } from 'react-router-dom';
 
 
 function Producto({producto}) {
     const { nombre, precio, id } = producto;
-    const { deleteProducts } = useContext(ProductosContext);
-
+    const { deleteProducts, setProducto } = useContext(ProductosContext);
+    
+    const history = useHistory(); 
         // Confirmar si desea eliminarlo
         const confirmarEliminarProducto = id => {
 
@@ -15,6 +17,12 @@ function Producto({producto}) {
                     console.log(id)
       
         }
+
+
+        const redireccionarEdicion = producto => {
+            setProducto(producto) ;
+         history.push(`/productos/editar/${producto.id}`)
+        }
     return (
         <tr>
             <td>{nombre}</td>
@@ -22,8 +30,11 @@ function Producto({producto}) {
             <td className="acciones">
                 <button 
                     type="button"               
-                    className="btn btn-primary mr-2">
+                    className="btn btn-primary mr-2"
+                    onClick={ () => redireccionarEdicion(producto) }
+                    >
                     Editar
+                    
                 </button>
                 <button 
                     type="button"

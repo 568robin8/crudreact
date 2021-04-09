@@ -10,6 +10,7 @@ const ProductosProvider = (props) => {
 
     // crear el state del Context
     const [productos, guardarProductos] = useState([]);
+    const [productoeditar, guardarProductoeditar] = useState();
 
     // ejecutar el llamado a la api
     useEffect(() => {
@@ -39,12 +40,29 @@ const ProductosProvider = (props) => {
        // console.log(resultado)
     }
 
+    const setProducto = (producto) => {
+       // const resultado =  await axios.post('http://localhost:4000/productos', producto);
+        guardarProductoeditar(producto);
+       // console.log(resultado)
+    }
+
+    const guardareditado= async (productoe) => {
+        const resultado =  await axios.put(`http://localhost:4000/productos/${productoe.id}`, productoe); 
+        guardarProductos(productos.map( producto => 
+            producto.id === productoe.id ? producto = productoe : producto
+        ));
+       // console.log(resultado)
+    }
+
     return (
         <ProductosContext.Provider
             value={{
                 productos,
                 deleteProducts,
-                agregarProducto
+                agregarProducto,
+                setProducto,
+                productoeditar,
+                guardareditado
             }}
         >
             {props.children}

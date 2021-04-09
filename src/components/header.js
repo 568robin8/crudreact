@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 export default function header() {
   return (
@@ -20,15 +22,14 @@ export default function header() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="#">
-              Home
-            </a>
-            <a className="nav-link" href="#">
-              Features
-            </a>
-            <a className="nav-link" href="#">
-              Pricing
-            </a>
+
+            <Link to={'/'} className="nav-link active">
+                        CRUD - React,  REST API & Axios
+                    </Link>
+   
+            <Link to={"/productos/nuevo"}
+                className="btn btn-danger nuevo-post d-block d-md-inline-block"
+            >Agregar Producto &#43;</Link>
           </div>
         </div>
       </div>
