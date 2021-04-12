@@ -28,7 +28,7 @@ export default function header() {
                     </Link>
    
             <Link to={"/productos/nuevo"}
-                className="btn btn-danger nuevo-post d-block d-md-inline-block"
+                className="nav-link active"
             >Agregar Producto &#43;</Link>
           </div>
         </div>

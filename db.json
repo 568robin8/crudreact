@@ -1,19 +1,14 @@
 {
   "productos": [
     {
-      "nombre": "Rib Eye",
+      "nombre": "nuevo phone",
+      "precio": "45",
+      "id": 18
+    },
+    {
+      "nombre": "new product",
       "precio": "500",
-      "id": 7
-    },
-    {
-      "nombre": "nuevo",
-      "precio": "44",
-      "id": 13
-    },
-    {
-      "nombre": "lentes",
-      "precio": "89",
-      "id": 14
+      "id": 19
     }
   ]
 }
